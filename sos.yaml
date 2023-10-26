@@ -49,6 +49,7 @@ tags:
   - name: course
   - name: student
   - name: professor
+  - name: assistant
 paths:
   /users/login:
     post:
@@ -686,4 +687,278 @@ paths:
         '200':
           description: successful request
           
+  /student/{pk}/course-substitution/send-form:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
   
+  /professor/{pk}/students-substitution-forms:
+
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+  
+  /professor/{pk}/students-substitution-forms/{s-pk}:
+
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+          
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+          
+  
+  /student/{pk}/class-schedule:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+      
+  
+  /student/{pk}/exam-schedule:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+  
+  /student/{pk}/courses/{c-pk}/emergency-remove:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: c-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+          
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: c-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+    put:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: c-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+    delete:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: c-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  
+  /assistant/{pk}/emergency-remove:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - assistant
+      responses:
+        '200':
+          description: successful request
+          
+  /assistant/{pk}/emergency-remove/{s-pk}:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  
+  /student/{pk}/remove-term:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+          
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+    put:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+    delete:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
