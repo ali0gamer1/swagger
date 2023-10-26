@@ -41,26 +41,14 @@ externalDocs:
   url: http://swagger.io
 servers:
   - url: 127.0.0.1
-
 tags:
   - name: user
-    #description: Everything about your Pets
-    #externalDocs:
-    #  description: Find out more
-    #  url: http://swagger.io
-  
   - name: term
   - name: admin
-    #description: Everything about your Pets
-    #externalDocs:
-    #  description: Find out more
-    #  url: http://swagger.io
-  
   - name: subject
   - name: course
   - name: student
   - name: professor
-  
 paths:
   /users/login:
     post:
@@ -69,7 +57,6 @@ paths:
       responses:
         '200':
           description: successful login
-          
   /users/logout:
     post:
       tags:
@@ -77,14 +64,13 @@ paths:
       responses:
         '200':
           description: successful logout
-  /users/change-password-request:  
+  /users/change-password-request:
     post:
       tags:
         - user
       responses:
         '200':
           description: successful request
-  
   /users/change-password-action‬:
     post:
       tags:
@@ -92,7 +78,6 @@ paths:
       responses:
         '200':
           description: successful request
-  
   /admin/professors‬:
     post:
       tags:
@@ -106,7 +91,6 @@ paths:
       responses:
         '200':
           description: successful request
-  
   /admin/professors/{pk}‬:
     put:
       parameters:
@@ -144,7 +128,6 @@ paths:
       responses:
         '200':
           description: successful request
-    
   /admin/students:
     post:
       tags:
@@ -158,7 +141,6 @@ paths:
       responses:
         '200':
           description: successful request
-  
   /admin/assistants:
     post:
       tags:
@@ -172,9 +154,6 @@ paths:
       responses:
         '200':
           description: successful request
-    
-          
-  
   /admin/assistant/{pk}‬:
     put:
       parameters:
@@ -212,317 +191,440 @@ paths:
       responses:
         '200':
           description: successful request
-    
   /admin/faculties:
-      post:
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-      get:
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-  
+    post:
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
+    get:
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
   /admin/faculty/{pk}:
-      post:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-      get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-  
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
   /admin/term:
-      post:
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-      get:
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-  
+    post:
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
+    get:
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
   /admin/term/{pk}:
-      put:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-      get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
-      
-      delete:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - admin
-        responses:
-          '200':
-            description: successful request
+    put:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
+    delete:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - admin
+      responses:
+        '200':
+          description: successful request
   /subjects:
-      post:
-        tags:
-          - subject
-        responses:
-          '200':
-            description: successful request
-      get:
-        tags:
-          - subject
-        responses:
-          '200':
-            description: successful request
-  
+    post:
+      tags:
+        - subject
+      responses:
+        '200':
+          description: successful request
+    get:
+      tags:
+        - subject
+      responses:
+        '200':
+          description: successful request
   /subjects/{pk}:
-      put:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - subject
-        responses:
-          '200':
-            description: successful request
-      get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - subject
-        responses:
-          '200':
-            description: successful request
-      
-      delete:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - subject
-        responses:
-          '200':
-            description: successful request
-  
+    put:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - subject
+      responses:
+        '200':
+          description: successful request
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - subject
+      responses:
+        '200':
+          description: successful request
+    delete:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - subject
+      responses:
+        '200':
+          description: successful request
   /courses:
-      post:
-        tags:
-          - course
-        responses:
-          '200':
-            description: successful request
-      get:
-        tags:
-          - course
-        responses:
-          '200':
-            description: successful request
-  
+    post:
+      tags:
+        - course
+      responses:
+        '200':
+          description: successful request
+    get:
+      tags:
+        - course
+      responses:
+        '200':
+          description: successful request
   /courses/{pk}:
-      put:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - course
-        responses:
-          '200':
-            description: successful request
-      get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - course
-        responses:
-          '200':
-            description: successful request
-      
-      delete:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - course
-        responses:
-          '200':
-            description: successful request
-  
+    put:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - course
+      responses:
+        '200':
+          description: successful request
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - course
+      responses:
+        '200':
+          description: successful request
+    delete:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - course
+      responses:
+        '200':
+          description: successful request
   /students:
     get:
-        tags:
-          - student
-        responses:
-          '200':
-            description: successful request
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
   /students/{pk}:
     get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - student
-        responses:
-          '200':
-            description: successful request
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
     put:
-          parameters:
-            - in: path
-              name: pk
-              schema:
-                type: integer
-              required: true
-          tags:
-            - student
-          responses:
-            '200':
-              description: successful request
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
   /professors:
     get:
-        tags:
-          - professor
-        responses:
-          '200':
-            description: successful request
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
   /professors/{pk}:
     get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - professor
-        responses:
-          '200':
-            description: successful request
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
     put:
-          parameters:
-            - in: path
-              name: pk
-              schema:
-                type: integer
-              required: true
-          tags:
-            - professor
-          responses:
-            '200':
-              description: successful request
-  
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
   /terms:
     get:
-        tags:
-          - term
-        responses:
-          '200':
-            description: successful request
+      tags:
+        - term
+      responses:
+        '200':
+          description: successful request
   /term/{pk}:
     get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - term
-        responses:
-          '200':
-            description: successful request
-  
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - term
+      responses:
+        '200':
+          description: successful request
   /student/{pk}/my-courses:
     get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - student
-        responses:
-          '200':
-            description: successful request
-  
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
   /student/{pk}/pass-courses-report:
     get:
-        parameters:
-          - in: path
-            name: pk
-            schema:
-              type: integer
-            required: true
-        tags:
-          - student
-        responses:
-          '200':
-            description: successful request
-  
-  
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/term-courses:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/remaining-terms:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/course-selection/create:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/course-selection:
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/course-selection/check:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/course-selection/submit:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /student/{pk}/course-selection/send-form:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - student
+      responses:
+        '200':
+          description: successful request
+  /professor/{pk}/students-selection-forms:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+  /professor/{pk}/students-selection-forms/{s-pk}:
+    post:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
+    get:
+      parameters:
+        - in: path
+          name: pk
+          schema:
+            type: integer
+          required: true
+        - in: path
+          name: s-pk
+          schema:
+            type: integer
+          required: true
+      tags:
+        - professor
+      responses:
+        '200':
+          description: successful request
